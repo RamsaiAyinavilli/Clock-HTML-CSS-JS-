@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2f363e;
+}
+.container{
+    position: relative;
+    background: #0a62c6;
+    border-radius: 20px;
+    box-shadow: 10px 55px 70px rgba(0, 0, 0, 0.75),
+    15px 50px 20px rgba(0, 0, 0, 0.25);
+    border-top-right-radius: 225px;
+    border-top-left-radius: 225px;
+    border: 2px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:fit-content;
+}
+
+.clock{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    background:#023570ce ;
+    box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.75),
+    10px 10px 70px rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
+
+    
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #2f363e;
+    border: 3px solid #fff;
+    border-radius: 50px;
+    z-index: 100000;
+}
+.clock span{
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    inset: 20px;
+    transform: rotate(calc(30deg*var(--i)));
+}
+.clock span b{
+    font-size: 2em;
+    opacity: 0.5;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg*var(--i)));
+}
+.circle{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border:2px solid rgba(240, 233, 233, 0.321);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+
+}
+.circle i{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background:var(--clr);
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+    opacity: 0.75;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+
+}
+.circle :nth-child(1) i{
+    width: 2px;
+}
+.circle :nth-child(2) i{
+    width: 6px;
+}
+
+.circle2{
+    width: 240px;
+    height: 240px;
+    z-index: 9;
+}
+.circle3{
+    width: 180px;
+    height: 180px;
+    z-index: 8;
+}
+.circle::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    top: -8.5px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),0 0 60px var(--clr);
+}
+.time {
+      color: #fff;
+      background:#024087a1 ;
+    display: flex;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
+ 
+}
+.time div{
+    position: relative;
+    width: 30px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr);
+
+}
+.time div:last-child{
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time div:nth-child(1)::after{
+    content: ':';
+    right: -3px;
+    position: absolute;
+}
+.time div:nth-child(2)::after{
+    content: ':';
+    right: -3px;
+    position: absolute;
+    animation:animate 1s steps(1) infinite;
+}
+@keyframes animate {
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+}
+.date{
+color: #fff;
+background:#023570a2 ;
+display: flex;
+padding: 10px 25px;
+margin-bottom: 25px;
+border: 2px solid rgba(0, 0, 0, 0.25);
+border-radius: 50px;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
+}
+.date div{
+    position: relative;
+    width: 35px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr);
+
+}
+.date div:last-child{
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date div:nth-child(1)::after{
+    content: '-';
+    right: -3px;
+    position: absolute;
+}
+.date div:nth-child(2)::after{
+    content: '-';
+    right: -1px;
+    position: absolute;
+}
+.date div:nth-child(3)::after{
+    content: '-';
+    right: -2px;
+    position: absolute;
+}
+.date div:last-child{
+    font-size: 15px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
